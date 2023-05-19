@@ -22,8 +22,12 @@ class Matrix22(val xx: Double, val yx: Double, val xy: Double, val yy: Double){
         return Vector2(vec.x * xx + vec.y * yx, vec.x * xy + vec.y * yy)
     }
 
+    fun scale(fac: Double): Matrix22{
+        return Matrix22(xx * fac, yx * fac, xy * fac, yy * fac)
+    }
+
     fun invert(): Matrix22{
-        return Matrix22(yy,-yx,-xy,xx)
+        return Matrix22(yy,-yx,-xy,xx).scale(1 / (xx*yy - xy*yx))
     }
 
 }
