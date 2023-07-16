@@ -23,4 +23,17 @@ data class Vector2(val x: Double, val y: Double){
     fun uni(): Vector2{
         return scale(1/length())
     }
+
+    fun ortho(): Vector2{
+        return Vector2(-y, x)
+    }
+
+    fun invert(): Vector2{
+        return Vector2(-x, -y)
+    }
+
+    fun norm(): Vector2{
+        val l = length()
+        return Vector2(x / l, y / l)
+    }
 }

@@ -37,6 +37,10 @@ class Vector3(val x: Double, val y: Double, val z: Double) {
         return x*x+y*y+z*z
     }
 
+    fun expand(): Triple<Double, Double, Double>{
+        return Triple(x,y,z)
+    }
+
     override fun toString(): String {
         return "$x,$y,$z"
     }
